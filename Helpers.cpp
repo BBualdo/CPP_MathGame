@@ -12,3 +12,10 @@ std::string Helpers::to_string(MathOperations operation) {
 		return "Division";
 	}
 }
+
+int Helpers::get_random_number(int min, int max) {
+	std::random_device rng;
+	std::mt19937 gen(rng());
+	std::uniform_int_distribution<int> dist(min, max);
+	return dist(gen);
+}

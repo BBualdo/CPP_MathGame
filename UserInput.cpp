@@ -5,6 +5,7 @@ std::string UserInput::get_user_name() {
 	std::string name;
 	std::cout << "Enter your name: ";
 	std::cin >> name;
+	std::cout << "\n\n";
 	return name;
 }
 

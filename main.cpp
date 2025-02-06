@@ -4,9 +4,13 @@
 int main()
 {
 	Engine::show_title();
-	auto username = UserInput::get_user_name();
-	std::cout << "\n\nHello, " << username << ". What would you like to do?\n";
-	Engine::show_menu();
-	auto user_choice = UserInput::get_user_choice();
-	std::cout << "User choice: " << user_choice << std::endl;
+	Engine::username = UserInput::get_user_name();
+	while (true) {
+		std::cout << "Hello, " << Engine::username << ". What would you like to do?\n";
+		Engine::show_menu();
+		auto user_choice = UserInput::get_user_choice();
+		auto op = Engine::get_operation(user_choice);
+		Engine::start_game(op);
+	}
+	return 0;
 }
