@@ -15,3 +15,12 @@ void Engine::show_menu() {
 	}
 	std::cout << "5. Exit Program\n";
 }
+
+
+void Engine::clear_console() {
+	#ifdef _WIN32
+		system("cls");
+	#else
+		system("clear");
+	#endif
+}
